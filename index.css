@@ -1,0 +1,26 @@
+p{
+    color: blue;
+    border: solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 300px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    justify-self: baseline;
+    
+    
+}
+button{
+    color: rgb(3, 3, 3);
+    background-color: rgb(96, 205, 239);
+    border-radius: 10%;
+    box-shadow: 10%;
+    text-align: left;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    font-style: inherit;
+    
+}

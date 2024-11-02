@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F1 Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: red;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        header img {
+            width: 50px;
+        }
+        header .menu-bar {
+            display: flex;
+            gap: 15px;
+        }
+        header .menu-bar span {
+            font-size: larger;
+            cursor: pointer;
+        }
+        header .menu-bar span:hover {
+            background-color: rgb(60, 137, 214);
+        }
+        nav {
+            background-color: rgb(182, 166, 166);
+            text-align: center;
+            padding: 10px;
+            color: rgb(25, 120, 203);
+            word-spacing: 20px;
+            cursor: pointer;
+        }
+        nav a {
+            color: aliceblue;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        p {
+            font-size: larger;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 0 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .driver, .f1cars {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .driver div, .f1cars div {
+            border: 1px solid black;
+            background-color: antiquewhite;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: left;
+            width: calc(100% / 5 - 40px);
+        }
+        .driver ul {
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+            list-style-type: none;
+            padding: 0;
+        }
+        .driver div:hover, .f1cars div:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .driver img, .f1cars img {
+            width: 100%;
+            height: auto;
+        }
+        .f1cars div {
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            margin: 20px 10px;
+        }
+        footer img {
+            margin: 0 10px;
+        }
+        #center {
+            box-shadow: 10px red;
+        }
+        @media (max-width: 1200px) {
+            .driver div, .f1cars div {
+                width: calc(100% / 4 - 30px);
+            }
+        }
+        @media (max-width: 992px) {
+            .driver div, .f1cars div {
+                width: calc(100% / 3 - 20px);
+            }
+        }
+        @media (max-width: 768px) {
+            .driver div, .f1cars div {
+                width: calc(100% / 2 - 15px);
+            }
+        }
+        @media (max-width: 576px) {
+            .driver div, .f1cars div {
+                width: 100%;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            header .menu-bar {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg">
+        <div class="menu-bar">
+            <span><span class="material-symbols-outlined">home</span>Home</span>
+            <span><span class="material-symbols-outlined">search</span>Search</span>
+            <span><span class="material-symbols-outlined">login</span>Log-In</span>
+        </div>
+    </header>
+    <nav>
+        <a href="Drivers">Drivers</a>
+        <a href="Cars">Cars</a>
+        <a href="About F1">About F1</a>
+    </nav>
+    <p>Formula One, also called F1 in short, is an international auto racing sport. F1 is the highest level of single-seat, open-wheel and open-cockpit professional motor racing contest. Formula One racing is governed and sanctioned by a world body called the FIA − Fédération Internationale de l'Automobile or the International Automobile Federation. The name ‘Formula’ comes from the set of rules that the participating cars and drivers must follow.<br><br>The ‘Formula’ is a set of rules – covering car design, engine size, component usage and much, much more – that all competitors must abide by. Secondly, the ‘1’ simply denotes that it is the premier formula.<br><br>Formula 1 was formed as a world championship competition back in 1950, with the first-ever race held at the Silverstone Circuit – a former Royal Air Force station – in the United Kingdom on May 13 of that year. Six more events were staged in a season which saw Alfa Romeo driver Giuseppe ‘Nino’ Farina become the sport’s first world champion – edging out teammates Juan Manuel Fangio and Luigi Fagioli. While motorsport had been taking place since the late-1800s, with Grand Prix events growing in popularity across the following decades, 1950 marked the start of the official F1 championship that remains to this day.</p>
+    <h2><u>F1 Drivers</u></h2>
+    <div class="driver">
+        <div>
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/verstappen" alt="Max Verstappen">
+            <ul>
+                <li>Name: Max Verstappen</li>
+                <li>Age: 26</li>
+                <li>Date of Birth: 30/09/1997</li>
+                <li>Birth Place: Belgium</li>
+                <li>Team: Red Bull Racing</li>
+            </ul>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/leclerc" alt="Charles Leclerc">
+            <ul>
+                <li>Name: Charles Leclerc</li>
+                <li>Age: 26</li>
+                <li>Date of Birth: 16/10/1997</li>
+                <li>Birth Place: Monaco</li>
+                <li>Team: Ferrari</li>
+            </ul>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/hamilton" alt="Lewis Hamilton">
+            <ul>
+                <li>Name: Lewis Hamilton</li>
+                <li>Age: 39</li>
+                <li>Date of Birth: 07/01/1985</li>
+                <li>Birth Place: England</li>
+                <li>Team: Mercedes</li>
+            </ul>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/russell" alt="George Russell">
+            <ul>
+                <li>Name: George Russell</li>
+                <li>Age: 24</li>
+                <li>Date of Birth: 15/02/1998</li>
+                <li>Birth Place: England</li>
+                <li>Team: Mercedes</li>
+            </ul>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/norris" alt="Lando Norris">
+            <ul>
+                <li>Name: Lando Norris</li>
+                <li>Age: 23</li>
+                <li>Date of Birth: 13/11/1999</li>
+                <li>Birth Place: England</li>
+                <li>Team: McLaren</li>
+            </ul>
+        </div>
+    </div>
+    <h2><u>F1 Cars</u></h2>
+    <div class="f1cars">
+        <div>
+            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/red-bull-racing.png" alt="Red Bull">
+            <div>Oracle Red Bull Racing</div>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/ferrari.png" alt="Ferrari">
+            <div>Scuderia Ferrari</div>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/mclaren.png" alt="McLaren">
+            <div>McLaren Formula 1 Team</div>
+        </div>
+        <div>
+            <img src="https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/mercedes.png" alt="Mercedes">
+            <div>Mercedes-AMG PETRONAS F1 Team</div>
+        </div>
+    </div>
+    <center>
+        <video width="50%" style="cursor: pointer;" controls>
+            <source src="/html/film1.mp4" type="video/mp4">
+        </video>
+    </center>
+    <h2><u>Partners</u></h2>
+    <footer>
+        <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2020/sponsors/dhl.png" alt="DHL">
+        <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2020/sponsors/rolex.png" alt="Rolex">
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/315ee0447c.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 50%;
+            margin-bottom: 50%;
+            overflow: hidden;
+            resize: vertical;
+           
+
+        }
+        .iocn{
+           width: 60px;
+           height: 60px;
+           background: radial-gradient(circle,white,#0000ff);
+            background-color:rgb(247, 245, 243);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20%;
+            
+            box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4, 0 0 25px #03e9f4, 0 0 100px #03e9f4;
+        }
+        .iocn:hover > i{
+            scale: 1.9;
+            color: #e31313;
+        }
+      
+        .iocn:hover::before{
+            animation: slide 1s forwards;
+        }
+      
+
+            
+        
+         
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="#" class="iocn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="iocn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="iocn"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="iocn"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+</body>
+</html>
