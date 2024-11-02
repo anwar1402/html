@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
+<link href="./js.css" rel="styl stylesheet">
+
+    <title>Movie Search</title>
+ <style>
+    body{
+    background-color: #93ae85;
+
+}
+#loading {
+    display: none;
+    background-color: black;
+}   
+.a{
+    text-align: center;
+    margin-top: 100px;
+
+}
+.a>h2{
+    font-size: 40px;
+    cursor: pointer;
+    font-family: "Oswald", sans-serif;
+}
+
+.a>input{
+    height: 40px;
+    width: 300px;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #e5e6ec;
+
+}
+.a>button{
+    height: 40px;
+    width: 120px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(54, 88, 210);
+    padding: 9px 34px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 16px;
+    cursor: pointer;
+
+}
+.a>button:hover{
+    background-color: rgb(44, 74, 165);
+     cursor: pointer;
+      display: inline-block;
+     position: relative;
+     transition: 0.5s;
+    }
+    button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+    }
+    button:hover{
+    padding-right: 24px;
+    padding-left:8px;
+    }
+    button:hover:after {
+    opacity: 1;
+    right: 10px;
+    }
+
+   #movie-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    margin-top: 50px;
+    margin-left: 50px;
+
+   }
+
+   .movie-cards{
+    width: 300px;
+    border: 2px solid rgb(0, 166, 255);
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-family: "Kalam", cursive;
+    font-size: 13.5px;
+    background-image: url("https://images.pexels.com/photos/176851/pexels-photo-176851.jpeg?auto=compress&cs=tinysrgb&w=600");
+
+   }
+   .movie-thumbnail{
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+
+
+   }
+
+   .movie-cards:hover{
+
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    color: azure;
+    transition: color 0.3s ease-in-out;
+   }
+   #movie-status{
+    font-size: 2px; 
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-left: 30px;
+
+   }
+  
+@media (max-width: 592px) {
+    .movie-cards {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 593px) and (max-width: 767px) {
+    .movie-cards {
+      width: calc(50% - 30px);
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .movie-cards {
+      width: calc(33.333% - 30px);
+    }
+  }
+  @media (min-width: 1025px) {
+    .movie-cards {
+      width: calc(25% - 30px);
+    }
+  }
+  @media screen 
+  and (min-width: 768px){
+    .movie-cards {
+      width: calc(100% - 30px);
+    }
+
+    @media screen 
+    and (min-width: 768px){
+        .movie-cards {
+            width: calc(50% - 30px);
+        }
+        
+    }
+    @media screen
+    and (min-width: 1024px){
+        .movie-cards {
+            width: calc(33.333% - 30px);
+        }
+        
+    }
+    @media screen
+    and (min-width: 1440px){
+        .movie-cards {
+            width: calc(25% - 30px);
+        }
+
+        @media screen
+        and (min-width: 1440px){
+            .movie-cards {
+                width: calc(20% - 30px);
+            }
+
+            @media screen
+            and (min-width: 2560px){
+                .movie-cards {
+                    width: calc(16.666% - 30px);
+                }
+                
+            }
+            @media screen
+            and (min-width: 3840px){
+                .movie-cards {
+                    width: calc(12.5% - 30px);
+                }
+
+                @media screen
+                and (min-width: 5120px){
+                    .movie-cards {
+                        width: calc(10% - 30px);
+                    }
+
+                }
+                
+                
+            }
+            
+        }
+        
+    }
+  }
+  
+
+   
+
+
+ </style>
+</head>
+<body>
+    <div class="a">
+    <h2>Movie Search</h2>
+    <input type="text" id="movie-name" placeholder="Enter movie name">
+    <button id="search-btn">Search</button>
+</div>
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="movie-status">
+        
+    </div>
+    <div id="movie-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var movieNameElement = document.getElementById("movie-name");
+            var searchButton = document.getElementById("search-btn");
+            var movieContainer = document.getElementById("movie-container");
+            var movieStatusElement = document.getElementById("movie-status");
+            var loadingElement = document.getElementById("loading");
+
+            searchButton.addEventListener("click", function () {
+                movieContainer.innerHTML = "";
+                movieStatusElement.innerHTML = "";
+                let movieName = movieNameElement.value;
+                var xhttp = new XMLHttpRequest();
+                loadingElement.style.display = "block";
+
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        loadingElement.style.display = "none";
+                        movieStatusElement.innerHTML = "";
+
+                        let result = JSON.parse(this.responseText);
+                        if (result.Response === "True") {
+                            console.log(result);
+                            result.Search.map((item, i) => {
+                                movieContainer.innerHTML += `
+                                <div class="movie-cards">
+                                    <img    
+                                        class="movie-thumbnail"
+                                        src="${item.Poster}"
+                                    />
+                                    <p><b>Title : </b>${item.Title}</p>
+                                    <p><b>Release Year : </b>${item.Year}</p>
+                                    <p><b>Type : </b>${item.Type}</p>
+                                </div>
+                                `;
+                            });
+                        } else if (result.Response === "False") {
+                            movieStatusElement.innerText = "404 movie not found..!";
+                        }
+                    }
+                };
+
+                xhttp.open("GET", `https://www.omdbapi.com/?apikey=45f0782a&s=${movieName}`, true);
+                xhttp.send();
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+</html>
